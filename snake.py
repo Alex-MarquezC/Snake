@@ -29,6 +29,16 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+def move_food():
+    """Move food randomly staying inside the window"""
+    step = choice(Directions)
+    new_pos = food.copy()
+    new_pos.move(step)
+
+    if inside(new_pos):
+        food.move(step)
+
+
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
@@ -55,6 +65,8 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
+
+    move_food()
     ontimer(move, 100)
 
 
