@@ -8,6 +8,7 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
+import random
 from random import randrange
 from turtle import *
 
@@ -31,7 +32,7 @@ def inside(head):
 
 def move_food():
     """Move food randomly staying inside the window"""
-    step = choice(directions)
+    step = random.choice(directions)
     new_pos = food.copy()
     new_pos.move(step)
 
