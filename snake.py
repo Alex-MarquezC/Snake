@@ -8,13 +8,25 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
-import random, sample
+import random
 from random import randrange
 from turtle import *
 from freegames import square, vector
 
 PALETA_COLORES = ['blue', 'black', 'green', 'yellow', 'purple']
-SNAKE_COLOR, COMIDA_COLOR = sample(PALETA_COLORES, 2)
+
+
+def colores_juego():
+    """Return distinct colors for the snake and the food."""
+    snake_color = random.choice(PALETA_COLORES)
+
+    opciones_comida = [c for c in PALETA_COLORES if c != snake_color]
+    food_color = random.choice(opciones_comida) if opciones_comida else snake_color
+
+    return snake_color, food_color
+
+
+SNAKE_COLOR, COMIDA_COLOR = colores_juego()
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
