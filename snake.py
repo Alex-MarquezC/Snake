@@ -31,7 +31,7 @@ def inside(head):
 
 def move_food():
     """Move food randomly staying inside the window"""
-    step = choice(Directions)
+    step = choice(directions)
     new_pos = food.copy()
     new_pos.move(step)
 
