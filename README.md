@@ -1,3 +1,5 @@
+
+Este es un juego donde una serpiente debe de atrapar su comida sin morderse la cola o tocar los bordes
 Agregue código para que la comida se mueva al azar y un paso a la ves sin salirse del cuadro
 Cambie la D de directions por una d minuscula
 Se importo la libreria random
